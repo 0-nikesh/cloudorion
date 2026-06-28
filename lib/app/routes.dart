@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../features/party_transaction/presentation/party_transaction_page.dart';
+import '../features/personal_expense/presentation/personal_expense_page.dart';
 
 class AppRoutes {
   static const home = '/';
   static const partyTransaction = '/party-transaction';
+  static const personalExpense = '/personal-expense';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
@@ -13,6 +15,8 @@ class AppRoutes {
         switch (settings.name) {
           case partyTransaction:
             return const PartyTransactionPage();
+          case personalExpense:
+            return const PersonalExpensePage();
           case home:
           default:
             return const HomePage();
@@ -33,6 +37,12 @@ class HomePage extends StatelessWidget {
         subtitle: 'Received or given money',
         icon: Icons.swap_vert_rounded,
         route: AppRoutes.partyTransaction,
+      ),
+      (
+        title: 'Add Personal Expense',
+        subtitle: 'Income and daily spending',
+        icon: Icons.account_balance_wallet_rounded,
+        route: AppRoutes.personalExpense,
       ),
     ];
 

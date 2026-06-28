@@ -6,5 +6,6 @@ void main() {
     await tester.pumpWidget(const CloudOrionApp());
 
     expect(find.text('Add Party Transaction'), findsOneWidget);
+    expect(find.text('Add Personal Expense'), findsOneWidget);
   });
 }
