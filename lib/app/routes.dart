@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../features/group_expense/presentation/group_expense_page.dart';
 import '../features/party_transaction/presentation/party_transaction_page.dart';
 import '../features/personal_expense/presentation/personal_expense_page.dart';
 
@@ -7,6 +8,7 @@ class AppRoutes {
   static const home = '/';
   static const partyTransaction = '/party-transaction';
   static const personalExpense = '/personal-expense';
+  static const groupExpense = '/group-expense';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
@@ -17,6 +19,8 @@ class AppRoutes {
             return const PartyTransactionPage();
           case personalExpense:
             return const PersonalExpensePage();
+          case groupExpense:
+            return const GroupExpensePage();
           case home:
           default:
             return const HomePage();
@@ -43,6 +47,12 @@ class HomePage extends StatelessWidget {
         subtitle: 'Income and daily spending',
         icon: Icons.account_balance_wallet_rounded,
         route: AppRoutes.personalExpense,
+      ),
+      (
+        title: 'Add Group Expense',
+        subtitle: 'Shared split among members',
+        icon: Icons.groups_rounded,
+        route: AppRoutes.groupExpense,
       ),
     ];
 

@@ -7,5 +7,6 @@ void main() {
 
     expect(find.text('Add Party Transaction'), findsOneWidget);
     expect(find.text('Add Personal Expense'), findsOneWidget);
+    expect(find.text('Add Group Expense'), findsOneWidget);
   });
 }
